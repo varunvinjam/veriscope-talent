@@ -93,6 +93,7 @@ header {
   padding: 20px 0;
   border-top: 1px solid #eee;
   margin-top: 10px;
+  text-align: center;
 }
 
 .mobile-menu.show {
@@ -104,6 +105,8 @@ header {
   color: #666666;
   font-weight: 500;
   padding: 8px 0;
+  text-align: center;
+  display: block;
 }
 
 /* Hero section */
@@ -131,15 +134,21 @@ header {
   color: #21c6c6;
 }
 
-/* Fix #2: Keep tagline on one line */
+/* Fix #2: Keep tagline on one line, with underlines for specific phrases */
 .hero p {
   font-size: 16px;
   margin-bottom: 28px;
-  max-width: 500px; /* Increased from 450px */
+  max-width: 500px;
   font-weight: 400;
   line-height: 1.7;
   color: #666666;
   white-space: nowrap; /* Prevents line breaks */
+}
+
+/* Add underlines to specific phrases */
+.underline-phrase {
+  border-bottom: 3px solid #000000;
+  padding-bottom: 1px;
 }
 
 .cta-btn {
@@ -226,14 +235,14 @@ header {
    .hero h1 {
     font-size: 2.2rem;
     max-width: 100%;
-    white-space: normal; /* Allow wrapping on mobile */
+    /* Keep the sentence structure intact on mobile */
   }
   
   .hero {
     padding: 40px 16px 30px;
   }
   
-  .hero p {
+   .hero p {
     max-width: 100%;
     white-space: normal; /* Allow wrapping on mobile */
   }

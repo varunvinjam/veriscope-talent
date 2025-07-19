@@ -1,49 +1,66 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Veriscope Talent</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veriscope Talent</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-left">
-            <img src="veriscope-logo.png" alt="Veriscope Talent Logo" class="nav-logo">
-            <span class="nav-title">VERISCOPE TALENT</span>
-        </div>
-        <div class="nav-links">
-            <a href="#">Services</a>
-            <a href="#">About</a>
-            <a href="#">Portfolio</a>
-            <a href="#" class="btn-contact">Contact Us</a>
-        </div>
+  <header>
+    <div class="logo">
+      <img src="veriscope_logo.png" alt="Veriscope Talent Logo">
+      <span>VERISCOPE TALENT</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#">Portfolio</a>
+      <a href="#" class="contact-btn">Contact Us</a>
     </nav>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </header>
 
-    <header class="hero">
-        <h1><span class="bold-navy">We Listen.</span> <span class="bold-navy">We Curate.</span><br><span class="bold-teal">You Hire.</span></h1>
-        <p class="subheading">Professional recruitment solutions that connect exceptional talent with forward-thinking companies.</p>
-        <a href="#" class="cta-button">Start Your Search</a>
-    </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#">Services</a>
+    <a href="#">About</a>
+    <a href="#">Portfolio</a>
+    <a href="#">Contact Us</a>
+  </div>
 
-    <section class="specialties">
-        <div class="card">
-            <h3>Rapid Deployment</h3>
-            <p>We move fast without compromising quality. Our streamlined process allow us to deliver strong candidates — often within days, not weeks.</p>
-        </div>
-        <div class="card">
-            <h3>Curated, Not Crowdsourced</h3>
-            <p>Every search is handled with care. We don’t flood inboxes — we handpick profiles that align with your business context, team needs, and long-term fit.</p>
-        </div>
-        <div class="card">
-            <h3>Built for All Hiring Stages</h3>
-            <p>Whether you’re hiring your first team or scaling leadership, we move with your pace — offering flexible models and hands-on support throughout.</p>
-        </div>
-    </section>
+  <section class="hero">
+    <h1><span class="highlight-navy">We Listen. We Curate.</span><br><span class="highlight-teal">You Hire.</span></h1>
+    <p>Professional recruitment solutions that connect exceptional talent with forward-thinking companies.</p>
+    <a href="#" class="cta-btn">Start Your Search</a>
+  </section>
 
-    <footer>
-        <p>© 2025 Veriscope Talent</p>
-    </footer>
+  <section class="feature-intro">
+    <p>At Veriscope Talent, we bridge the gap between exceptional professionals and innovative companies through our comprehensive recruitment solutions.</p>
+  </section>
+
+  <section class="features">
+    <div class="feature-box">
+      <img src="images/target-svgrepo-com.svg" alt="Precision Hiring">
+      <h3>Precision Hiring</h3>
+      <p>Every search is handled with care. We don’t flood inboxes — we handpick profiles that align with your context, team needs, and long-term fit.</p>
+    </div>
+    <div class="feature-box">
+      <img src="images/lightning-free-svgrepo-com.svg" alt="Quick Turnarounds">
+      <h3>Quick Turnarounds</h3>
+      <p>We move fast without compromising quality. Our process is built to deliver strong candidates — often in days, not weeks.</p>
+    </div>
+    <div class="feature-box">
+      <img src="images/group-svgrepo-com.svg" alt="Built for All Hiring Stages">
+      <h3>Built for All Hiring Stages</h3>
+      <p>Whether you're hiring core team members or senior management, we’ve got you covered.</p>
+    </div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('show');
+    }
+  </script>
 </body>
 </html>

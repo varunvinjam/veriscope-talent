@@ -1,3 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: #333;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #000000; /* Changed to black as requested */
+}
+
+.logo img {
+  height: 32px;
+  width: 32px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #666666;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #333333;
+}
+
+.contact-btn {
+  background-color: #21c6c6 !important;
+  color: white !important;
+  padding: 10px 20px !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 40px !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.contact-btn:hover {
+  background-color: #1eb5b5 !important;
+  color: white !important;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 0;
+  border-top: 1px solid #eee;
+  margin-top: 10px;
+}
+
+.mobile-menu.show {
+  display: flex;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: #666666;
+  font-weight: 500;
+  padding: 8px 0;
+}
+
+/* Hero section */
+.hero {
+  text-align: left;
+  padding: 60px 20px 40px;
+}
+
 /* Fix #1: Keep "We Listen. We Curate. You Hire." on one line */
 .hero h1 {
   font-size: 2.8rem;
@@ -7,6 +121,14 @@
   color: #000000;
   max-width: 600px;
   white-space: nowrap; /* Prevents line breaks */
+}
+
+.highlight-navy {
+  color: #000000; /* Changed to black as requested */
+}
+
+.highlight-teal {
+  color: #21c6c6;
 }
 
 /* Fix #2: Keep tagline on one line */
@@ -20,6 +142,50 @@
   white-space: nowrap; /* Prevents line breaks */
 }
 
+.cta-btn {
+  background-color: #21c6c6;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+}
+
+.cta-btn:hover {
+  background-color: #1eb5b5;
+}
+
+/* Features section */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 60px 20px 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.feature-box {
+  background-color: #fafafa;
+  padding: 32px 20px 36px;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feature-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
 /* Fix #3: Center SVGs within feature boxes */
 .feature-box img {
   height: 48px;
@@ -29,16 +195,61 @@
   display: block; /* Ensures margin auto works */
 }
 
-/* Mobile responsive adjustments */
+.feature-box h3 {
+  margin-bottom: 12px;
+  color: #000000;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.feature-box p {
+  line-height: 1.7;
+  font-weight: 400;
+  color: #666666;
+  font-size: 15px;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
-  .hero h1 {
+  body {
+    padding: 0 16px;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+  
+   .hero h1 {
     font-size: 2.2rem;
     max-width: 100%;
     white-space: normal; /* Allow wrapping on mobile */
   }
   
+  .hero {
+    padding: 40px 16px 30px;
+  }
+  
   .hero p {
     max-width: 100%;
     white-space: normal; /* Allow wrapping on mobile */
+  }
+  
+  .features {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 40px 16px 60px;
+  }
+  
+  .feature-box {
+    min-height: auto;
+    padding: 28px 20px 32px;
+  }
+  
+  .feature-box {
+    padding: 32px 20px;
   }
 }

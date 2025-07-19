@@ -116,8 +116,9 @@ header {
   font-size: 2.8rem;
   margin-bottom: 20px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.2;
   color: #000000; /* Changed to black as requested */
+  max-width: 600px;
 }
 
 .highlight-navy {
@@ -131,9 +132,9 @@ header {
 .hero p {
   font-size: 16px;
   margin-bottom: 28px;
-  max-width: 500px;
+  max-width: 450px;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.7;
   color: #666666;
 }
 
@@ -156,20 +157,24 @@ header {
 /* Features section */
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
   padding: 60px 20px 80px;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .feature-box {
   background-color: #fafafa;
-  padding: 40px 24px;
+  padding: 32px 20px 36px;
   border-radius: 12px;
   border: 1px solid #e5e5e5;
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .feature-box:hover {
@@ -178,24 +183,24 @@ header {
 }
 
 .feature-box img {
-  height: 56px;
-  width: 56px;
-  margin-bottom: 20px;
+  height: 48px;
+  width: 48px;
+  margin-bottom: 16px;
   opacity: 0.8;
 }
 
 .feature-box h3 {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   color: #000000;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .feature-box p {
-  line-height: 1.8;
+  line-height: 1.7;
   font-weight: 400;
   color: #666666;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 /* Responsive design */
@@ -214,16 +219,26 @@ header {
   
   .hero h1 {
     font-size: 2.2rem;
+    max-width: 100%;
   }
   
   .hero {
     padding: 40px 16px 30px;
   }
   
+  .hero p {
+    max-width: 100%;
+  }
+  
   .features {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
     padding: 40px 16px 60px;
+  }
+  
+  .feature-box {
+    min-height: auto;
+    padding: 28px 20px 32px;
   }
   
   .feature-box {

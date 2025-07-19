@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body {
   line-height: 1.6;
@@ -36,6 +36,9 @@ header {
   text-decoration: none;
   color: #0e0e60;
   font-weight: 600; /* Increased from 500 for premium feel */
+  display: flex;
+  align-items: center; /* Fixed: Align all nav items vertically */
+  height: 32px; /* Fixed: Consistent height for alignment */
 }
 .contact-btn {
   background-color: #21c6c6;
@@ -43,6 +46,9 @@ header {
   padding: 6px 12px;
   border-radius: 4px;
   font-weight: 600; /* Increased for premium feel */
+  display: flex;
+  align-items: center; /* Fixed: Proper vertical alignment */
+  height: 32px; /* Fixed: Match other nav items height */
 }
 /* Hamburger */
 .hamburger {

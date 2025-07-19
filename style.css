@@ -151,7 +151,7 @@ header {
 
 /* Underlines for specific phrases */
 .underline-phrase {
-  border-bottom: 3px solid #000000;
+  border-bottom: 3px solid #21c6c6;
   padding-bottom: 2px;
   display: inline;
 }

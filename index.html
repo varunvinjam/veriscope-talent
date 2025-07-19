@@ -4,15 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Veriscope Talent</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <div class="logo">
-      <img src="veriscope_logo.png" alt="Veriscope Talent Logo">
+      <img src="images/veriscope_logo.png" alt="Veriscope Talent Logo">
       <span>VERISCOPE TALENT</span>
     </div>
     <nav class="nav-links">
@@ -23,29 +20,30 @@
     </nav>
     <div class="hamburger" onclick="toggleMenu()">☰</div>
   </header>
-
+  
   <div class="mobile-menu" id="mobileMenu">
     <a href="#">Services</a>
     <a href="#">About</a>
     <a href="#">Portfolio</a>
-    <a href="#">Contact Us</a>
+    <a href="#" class="contact-btn">Contact Us</a>
   </div>
-
+  
   <section class="hero">
     <h1><span class="highlight-navy">We Listen. We Curate.</span><br><span class="highlight-teal">You Hire.</span></h1>
     <p>Professional recruitment solutions that connect exceptional talent with forward-thinking companies.</p>
     <a href="#" class="cta-btn">Start Your Search</a>
   </section>
-
+  
   <section class="feature-intro">
+    <h2>Talent Acquisition Made Simple</h2>
     <p>At Veriscope Talent, we bridge the gap between exceptional professionals and innovative companies through our comprehensive recruitment solutions.</p>
   </section>
-
+  
   <section class="features">
     <div class="feature-box">
       <img src="images/target-svgrepo-com.svg" alt="Precision Hiring">
       <h3>Precision Hiring</h3>
-      <p>Every search is handled with care. We don’t flood inboxes — we handpick profiles that align with your context, team needs, and long-term fit.</p>
+      <p>Every search is handled with care. We don't flood inboxes — we handpick profiles that align with your context, team needs, and long-term fit.</p>
     </div>
     <div class="feature-box">
       <img src="images/lightning-svgrepo-com.svg" alt="Quick Turnarounds">
@@ -55,10 +53,10 @@
     <div class="feature-box">
       <img src="images/group-svgrepo-com.svg" alt="Built for All Hiring Stages">
       <h3>Built for All Hiring Stages</h3>
-      <p>Whether you're hiring core team members or senior management, we’ve got you covered.</p>
+      <p>Whether you're hiring core team members or senior management, we've got you covered.</p>
     </div>
   </section>
-
+  
   <script>
     function toggleMenu() {
       const menu = document.getElementById('mobileMenu');

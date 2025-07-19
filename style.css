@@ -109,6 +109,13 @@ header {
   display: block;
 }
 
+.mobile-menu .contact-btn {
+  text-align: center !important;
+  margin: 0 auto !important;
+  display: block !important;
+  width: fit-content !important;
+}
+
 /* Hero section */
 .hero {
   text-align: left;
@@ -139,6 +146,7 @@ header {
   font-weight: 400;
   line-height: 1.7;
   color: #666666;
+  white-space: nowrap; /* Keeps tagline on one line for desktop */
 }
 
 /* Underlines for specific phrases */
@@ -244,6 +252,7 @@ header {
   
   .hero p {
     max-width: 100%;
+    white-space: normal; /* Allow wrapping on mobile */
   }
   
   /* Show mobile line breaks only on mobile */

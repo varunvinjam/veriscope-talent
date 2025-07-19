@@ -32,7 +32,7 @@ header {
   gap: 12px;
   font-weight: 600;
   font-size: 16px;
-  color: #000000; /* Changed to black as requested */
+  color: #000000;
 }
 
 .logo img {
@@ -115,7 +115,6 @@ header {
   padding: 60px 20px 40px;
 }
 
-/* Fix #1: Keep "We Listen. We Curate. You Hire." on one line */
 .hero h1 {
   font-size: 2.8rem;
   margin-bottom: 20px;
@@ -123,18 +122,16 @@ header {
   line-height: 1.2;
   color: #000000;
   max-width: 600px;
-  white-space: nowrap; /* Prevents line breaks */
 }
 
 .highlight-navy {
-  color: #000000; /* Changed to black as requested */
+  color: #000000;
 }
 
 .highlight-teal {
   color: #21c6c6;
 }
 
-/* Fix #2: Keep tagline on one line, with underlines for specific phrases */
 .hero p {
   font-size: 16px;
   margin-bottom: 28px;
@@ -142,13 +139,18 @@ header {
   font-weight: 400;
   line-height: 1.7;
   color: #666666;
-  white-space: nowrap; /* Prevents line breaks */
 }
 
-/* Add underlines to specific phrases */
+/* Underlines for specific phrases */
 .underline-phrase {
   border-bottom: 3px solid #000000;
-  padding-bottom: 1px;
+  padding-bottom: 2px;
+  display: inline;
+}
+
+/* Mobile-only line breaks for hero title */
+.mobile-break {
+  display: none;
 }
 
 .cta-btn {
@@ -195,13 +197,12 @@ header {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Fix #3: Center SVGs within feature boxes */
 .feature-box img {
   height: 48px;
   width: 48px;
-  margin: 0 auto 16px auto; /* Center horizontally */
+  margin: 0 auto 16px auto;
   opacity: 0.8;
-  display: block; /* Ensures margin auto works */
+  display: block;
 }
 
 .feature-box h3 {
@@ -232,19 +233,22 @@ header {
     display: block;
   }
   
-   .hero h1 {
+  .hero h1 {
     font-size: 2.2rem;
     max-width: 100%;
-    /* Keep the sentence structure intact on mobile */
   }
   
   .hero {
     padding: 40px 16px 30px;
   }
   
-   .hero p {
+  .hero p {
     max-width: 100%;
-    white-space: normal; /* Allow wrapping on mobile */
+  }
+  
+  /* Show mobile line breaks only on mobile */
+  .mobile-break {
+    display: inline;
   }
   
   .features {
@@ -256,9 +260,5 @@ header {
   .feature-box {
     min-height: auto;
     padding: 28px 20px 32px;
-  }
-  
-  .feature-box {
-    padding: 32px 20px;
   }
 }

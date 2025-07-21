@@ -114,13 +114,23 @@
   </section>
   
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('show');
-    }
-  </script>
-  
- <footer id="contact">
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('show');
+  }
+
+  // Hide mobile menu when a link is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll("#mobileMenu a");
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("mobileMenu").classList.remove("show");
+      });
+    });
+  });
+</script>
+
+<footer id="contact">
   <p>© 2025 Veriscope Talent. All rights reserved.</p>
   <p>Contact us: <a href="mailto:hello@veriscopetalent.com" style="color: #21c6c6;">hello@veriscopetalent.com</a></p>
 </footer>

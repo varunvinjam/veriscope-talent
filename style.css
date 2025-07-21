@@ -8,6 +8,10 @@
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   line-height: 1.6;
   background-color: #ffffff;
@@ -24,6 +28,10 @@ header {
   align-items: center;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
 }
 
 .logo {
@@ -267,14 +275,40 @@ header {
   font-size: 16px;
 }
 
-/* Features section */
+/* About Us section */
+.about-us {
+  padding: 80px 20px 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-us h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.about-description {
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+  text-align: center;
+}
+
+.about-description p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+/* Features section (now part of About Us) */
 .features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  padding: 60px 20px 80px;
-  max-width: 1100px;
-  margin: 0 auto;
+  margin-top: 40px;
 }
 
 .feature-box {
@@ -317,6 +351,69 @@ header {
   font-size: 15px;
 }
 
+/* Portfolio section */
+.portfolio {
+  background-color: #f8f9fa;
+  padding: 80px 20px;
+}
+
+.portfolio-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.portfolio h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.portfolio-description {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  text-align: left;
+}
+
+.portfolio-description p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+.portfolio-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+  text-align: left;
+}
+
+.portfolio-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: #333333;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.portfolio-list li:last-child {
+  margin-bottom: 0;
+}
+
+.portfolio-list .checkmark {
+  color: #21c6c6;
+  font-weight: 700;
+  margin-right: 12px;
+  font-size: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   body {
@@ -354,9 +451,9 @@ header {
     padding: 60px 16px;
   }
   
-  .services h2 {
+  .services h2, .about-us h2, .portfolio h2 {
     font-size: 2rem;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
   
   .service-card {
@@ -382,14 +479,29 @@ header {
     display: inline;
   }
   
+  .about-us {
+    padding: 60px 16px 40px;
+  }
+  
+  .about-description {
+    margin-bottom: 40px;
+  }
+  
   .features {
     grid-template-columns: 1fr;
     gap: 20px;
-    padding: 40px 16px 60px;
   }
   
   .feature-box {
     min-height: auto;
     padding: 28px 20px 32px;
+  }
+  
+  .portfolio {
+    padding: 60px 16px;
+  }
+  
+  .portfolio-description {
+    margin-bottom: 30px;
   }
 }

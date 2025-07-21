@@ -1,48 +1,394 @@
-/* Section heading styling updates */
-.services h2,
-.about-us h2,
-.portfolio h2 {
-  font-size: 2rem;
-  font-weight: 700;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: #333;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 16px;
   color: #000000;
-  margin-bottom: 32px;
+}
+
+.logo img {
+  height: 32px;
+  width: 32px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #666666;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #333333;
+}
+
+.contact-btn {
+  background-color: #21c6c6 !important;
+  color: white !important;
+  padding: 10px 20px !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 40px !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.contact-btn:hover {
+  background-color: #1eb5b5 !important;
+  color: white !important;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 0;
+  border-top: 1px solid #eee;
+  margin-top: 10px;
   text-align: center;
-  position: relative;
 }
 
-.services h2::after,
-.about-us h2::after,
-.portfolio h2::after {
-  content: '';
+.mobile-menu.show {
+  display: flex;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: #666666;
+  font-weight: 500;
+  padding: 8px 0;
+  text-align: center;
   display: block;
-  width: 60px;
-  height: 4px;
-  background-color: #21c6c6;
-  margin: 12px auto 0;
-  border-radius: 2px;
 }
 
-/* Adjust spacing inside Services */
+.mobile-menu .contact-btn {
+  text-align: center !important;
+  margin: 0 auto !important;
+  display: block !important;
+  width: fit-content !important;
+}
+
+/* Hero section */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 60px 20px 40px;
+  min-height: 500px;
+}
+
+.hero-content {
+  flex: 1;
+  text-align: left;
+}
+
+.hero-image {
+  flex: 0 0 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #000000;
+  max-width: 600px;
+}
+
+.highlight-navy {
+  color: #000000;
+}
+
+.highlight-teal {
+  color: #21c6c6;
+}
+
+.hero p {
+  font-size: 16px;
+  margin-bottom: 28px;
+  max-width: 650px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #666666;
+}
+
+/* Mobile-only line breaks for hero title */
+.mobile-break {
+  display: none;
+}
+
+.cta-btn {
+  background-color: #21c6c6;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+}
+
+.cta-btn:hover {
+  background-color: #1eb5b5;
+}
+
+/* Services section */
 .services {
   background-color: #f8f9fa;
-  padding: 60px 20px;
+  padding: 80px 20px;
+}
+
+.services-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 .service-card {
-  padding: 30px 24px;
+  background: white;
+  border-radius: 16px;
+  padding: 40px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8e9ea;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 16px;
+}
+
+.service-card p {
+  font-size: 16px;
+  color: #666666;
+  line-height: 1.6;
   margin-bottom: 24px;
 }
 
-/* Fix Portfolio spacing and bullet removal */
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-features li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #333333;
+  font-weight: 500;
+}
+
+.service-features li:last-child {
+  margin-bottom: 0;
+}
+
+.checkmark {
+  color: #21c6c6;
+  font-weight: 700;
+  margin-right: 12px;
+  font-size: 16px;
+}
+
+/* About Us section */
+.about-us {
+  padding: 80px 20px 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-us h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.about-description {
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+  text-align: center;
+}
+
+.about-description p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+/* Features section (now part of About Us) */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.feature-box {
+  background-color: #fafafa;
+  padding: 32px 20px 36px;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feature-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box img {
+  height: 48px;
+  width: 48px;
+  margin: 0 auto 16px auto;
+  opacity: 0.8;
+  display: block;
+}
+
+.feature-box h3 {
+  margin-bottom: 12px;
+  color: #000000;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.feature-box p {
+  line-height: 1.7;
+  font-weight: 400;
+  color: #666666;
+  font-size: 15px;
+}
+
+/* Portfolio section */
 .portfolio {
   background-color: #f8f9fa;
-  padding: 60px 20px;
+  padding: 80px 20px;
+}
+
+.portfolio-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.portfolio h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.portfolio-description {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  text-align: left;
+}
+
+.portfolio-description p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #666666;
+  margin-bottom: 20px;
 }
 
 .portfolio-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 24px 0;
+  margin: 0 0 30px 0;
+  text-align: left;
 }
 
 .portfolio-list li {
@@ -55,35 +401,107 @@
   line-height: 1.6;
 }
 
-.portfolio-list li::marker {
-  display: none;
+.portfolio-list li:last-child {
+  margin-bottom: 0;
 }
 
-/* Footer styles */
-footer {
-  background-color: #0e0e60;
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
-  font-size: 14px;
-  margin-top: 40px;
+.portfolio-list .checkmark {
+  color: #21c6c6;
+  font-weight: 700;
+  margin-right: 12px;
+  font-size: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
 }
 
-footer p {
-  margin: 0;
-  line-height: 1.6;
-}
-
+/* Responsive design */
 @media (max-width: 768px) {
-  .services h2,
-  .about-us h2,
-  .portfolio h2 {
-    font-size: 1.8rem;
+  body {
+    padding: 0 16px;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+  
+  .hero {
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 16px 30px;
+    min-height: auto;
+  }
+  
+  .hero-content {
+    text-align: left;
+    width: 100%;
+  }
+  
+  .hero-image {
+    flex: none;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .services {
+    padding: 60px 16px;
+  }
+  
+  .services h2, .about-us h2, .portfolio h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .service-card {
+    padding: 30px 24px;
     margin-bottom: 24px;
   }
-
-  footer {
-    padding: 30px 16px;
-    font-size: 13px;
+  
+  .service-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+    max-width: 100%;
+  }
+  
+  .hero p {
+    max-width: 100%;
+  }
+  
+  /* Show mobile line breaks only on mobile */
+  .mobile-break {
+    display: inline;
+  }
+  
+  .about-us {
+    padding: 60px 16px 40px;
+  }
+  
+  .about-description {
+    margin-bottom: 40px;
+  }
+  
+  .features {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .feature-box {
+    min-height: auto;
+    padding: 28px 20px 32px;
+  }
+  
+  .portfolio {
+    padding: 60px 16px;
+  }
+  
+  .portfolio-description {
+    margin-bottom: 30px;
   }
 }

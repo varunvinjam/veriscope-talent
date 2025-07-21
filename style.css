@@ -92,6 +92,8 @@ header {
   font-size: 24px;
   cursor: pointer;
   color: #333;
+  user-select: none;
+  z-index: 1001;
 }
 
 .mobile-menu {
@@ -102,6 +104,9 @@ header {
   border-top: 1px solid #eee;
   margin-top: 10px;
   text-align: center;
+  background-color: white;
+  position: relative;
+  z-index: 999;
 }
 
 .mobile-menu.show {
@@ -212,11 +217,25 @@ header {
 }
 
 .services h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: #000000;
   margin-bottom: 50px;
   text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.services h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #21c6c6;
+  border-radius: 2px;
 }
 
 .service-card {
@@ -283,11 +302,25 @@ header {
 }
 
 .about-us h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: #000000;
   margin-bottom: 40px;
   text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.about-us h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #21c6c6;
+  border-radius: 2px;
 }
 
 .about-description {
@@ -364,11 +397,25 @@ header {
 }
 
 .portfolio h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: #000000;
   margin-bottom: 40px;
   text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.portfolio h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #21c6c6;
+  border-radius: 2px;
 }
 
 .portfolio-description {
@@ -414,6 +461,110 @@ header {
   flex-shrink: 0;
 }
 
+/* Footer styles */
+footer {
+  background-color: #21c6c6;
+  color: white;
+  padding: 60px 20px 20px;
+  margin: 0 -20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  padding: 0 20px;
+}
+
+.footer-left {
+  flex: 1;
+}
+
+.footer-left h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.footer-subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 32px;
+}
+
+.contact-info p {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.contact-info a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.contact-info a:hover {
+  opacity: 0.8;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 32px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+}
+
+.footer-logo img {
+  height: 32px;
+  width: 32px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.footer-nav a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   body {
@@ -452,7 +603,7 @@ header {
   }
   
   .services h2, .about-us h2, .portfolio h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 30px;
   }
   
@@ -503,5 +654,38 @@ header {
   
   .portfolio-description {
     margin-bottom: 30px;
+  }
+
+  /* Footer mobile styles */
+  footer {
+    padding: 40px 16px 20px;
+    margin: 0 -16px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 16px;
+  }
+
+  .footer-left h3 {
+    font-size: 1.8rem;
+  }
+
+  .footer-right {
+    align-items: flex-start;
+    width: 100%;
+    gap: 24px;
+  }
+
+  .footer-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .footer-bottom {
+    padding: 24px 16px 0;
   }
 }

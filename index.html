@@ -112,28 +112,77 @@
       </div>
     </div>
   </section>
+
+  <footer id="contact">
+    <div class="footer-container">
+      <div class="footer-left">
+        <h3>Let's Work Together</h3>
+        <p class="footer-subtitle">(or just drop in to say hi)</p>
+        <div class="contact-info">
+          <p><a href="mailto:hello@veriscopetalent.com">hello@veriscopetalent.com</a></p>
+          <p><a href="tel:+919000000000">(+91) - 90000 00000</a></p>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-logo">
+          <img src="images/veriscope_logo.png" alt="Veriscope Talent Logo">
+          <span>VERISCOPE TALENT</span>
+        </div>
+        <nav class="footer-nav">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#portfolio">Portfolio</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Veriscope Talent. All rights reserved.</p>
+    </div>
+  </footer>
   
   <script>
-  function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('show');
-  }
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('show');
+    }
 
-  // Hide mobile menu when a link is clicked
-  document.addEventListener("DOMContentLoaded", () => {
-    const links = document.querySelectorAll("#mobileMenu a");
-    links.forEach(link => {
-      link.addEventListener("click", () => {
-        document.getElementById("mobileMenu").classList.remove("show");
+    // Hide mobile menu when a link is clicked and handle smooth scrolling
+    document.addEventListener("DOMContentLoaded", () => {
+      const links = document.querySelectorAll("#mobileMenu a, .nav-links a");
+      links.forEach(link => {
+        link.addEventListener("click", (e) => {
+          // Hide mobile menu
+          const mobileMenu = document.getElementById("mobileMenu");
+          if (mobileMenu.classList.contains("show")) {
+            mobileMenu.classList.remove("show");
+          }
+          
+          // Handle smooth scrolling for anchor links
+          const href = link.getAttribute("href");
+          if (href.startsWith("#")) {
+            e.preventDefault();
+            const targetElement = document.querySelector(href);
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+              });
+            }
+          }
+        });
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", (e) => {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const hamburger = document.querySelector(".hamburger");
+        
+        if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+          mobileMenu.classList.remove("show");
+        }
       });
     });
-  });
-</script>
-
-<footer id="contact">
-  <p>© 2025 Veriscope Talent. All rights reserved.</p>
-  <p>Contact us: <a href="mailto:hello@veriscopetalent.com" style="color: #21c6c6;">hello@veriscopetalent.com</a></p>
-</footer>
+  </script>
  
 </body>
 </html>

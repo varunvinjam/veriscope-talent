@@ -354,7 +354,8 @@ header {
   min-height: 280px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 16px; /* space between icon, title, and text */
 }
 
 .feature-box:hover {

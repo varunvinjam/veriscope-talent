@@ -718,3 +718,53 @@ footer {
     font-size: 11px;
   }
 }
+
+
+.form-section {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.candidate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.candidate-form input,
+.candidate-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.candidate-form button {
+  padding: 12px;
+  background-color: #0e0e60;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.candidate-form button:hover {
+  background-color: #21c6c6;
+}
+
+.back-home {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #0e0e60;
+  font-weight: 600;
+}
+
+.back-home:hover {
+  color: #21c6c6;
+}

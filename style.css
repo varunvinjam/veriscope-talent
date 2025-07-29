@@ -868,3 +868,23 @@ footer {
   font-weight: 600;
   color: #0e0e60;
 }
+
+.portfolio-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.highlight-box {
+  background-color: #e6f9f9;
+  border: 1px solid #21c6c6;
+  color: #0e0e60;
+  font-weight: 600;
+  padding: 14px 20px;
+  border-radius: 24px;
+  font-size: 0.95rem;
+  min-width: 220px;
+  text-align: center;
+}

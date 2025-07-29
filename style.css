@@ -810,3 +810,54 @@ footer {
 .contact-form button:hover {
   background-color: #21c6c6;
 }
+
+
+.industry-section,
+.tech-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.industry-section h3,
+.tech-section h3 {
+  font-size: 1.5rem;
+  color: #0e0e60;
+  margin-bottom: 24px;
+  position: relative;
+  padding-bottom: 8px;
+  display: inline-block;
+}
+
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.industry-card {
+  background: #f9f9f9;
+  padding: 18px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.tech-item {
+  background-color: #e6f9f9;
+  color: #0e0e60;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 1px solid #21c6c6;
+}

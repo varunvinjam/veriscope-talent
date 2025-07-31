@@ -938,3 +938,10 @@ footer {
 .cta-btn:hover {
   background-color: #1bb2b2;
 }
+
+.connect-icon {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 14px;
+  opacity: 0.85;
+}

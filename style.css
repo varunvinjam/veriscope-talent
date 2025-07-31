@@ -882,7 +882,7 @@ footer {
 
 .connect-section {
   padding: 60px 20px;
-  background-color: #ffffff; /* previously was #f6fafd (grey-ish), now cleaner white */
+  background: linear-gradient(to bottom, #ffffff, #f9f9f9);
   text-align: center;
 }
 

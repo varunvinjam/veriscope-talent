@@ -801,16 +801,18 @@ footer {
 
 .contact-form button {
   padding: 12px;
-  background-color: #0e0e60;
+  background-color: #000000; /* changed from navy to black */
   color: white;
   font-weight: 600;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .contact-form button:hover {
-  background-color: #21c6c6;
+  background-color: #21c6c6; /* teal on hover */
 }
 
 

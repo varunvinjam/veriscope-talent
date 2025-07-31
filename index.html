@@ -19,7 +19,7 @@
 	  <a href="submit.html">For Candidates</a>
       <a href="#contact" class="contact-btn">Contact Us</a>
     </nav>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="hamburger">☰</div>
   </header>
   
   <div class="mobile-menu" id="mobileMenu">
@@ -261,11 +261,12 @@
       }
     });
 
-    // Fix: Rebind hamburger to reopen menu correctly
-    hamburger.addEventListener("click", (e) => {
-      e.stopPropagation(); // Prevent it from triggering outside click listener
-      mobileMenu.classList.toggle("show");
-    });
+   
+    // This ensures hamburger click works consistently
+	hamburger.addEventListener("click", (e) => {
+	  e.stopPropagation();
+	  mobileMenu.classList.toggle("show");
+	});
   });
 </script>
  

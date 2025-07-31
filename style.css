@@ -111,6 +111,7 @@ header {
 
 .mobile-menu.show {
   display: flex;
+  flex-direction: column;
 }
 
 .mobile-menu a {

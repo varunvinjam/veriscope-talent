@@ -882,7 +882,7 @@ footer {
 
 .connect-section {
   padding: 60px 20px;
-  background-color: #f6fafd;
+  background-color: #ffffff; /* previously was #f6fafd (grey-ish), now cleaner white */
   text-align: center;
 }
 
@@ -891,32 +891,36 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
-  max-width: 900px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 
 .connect-box {
-  background-color: #ffffff;
+  background-color: #f9f9f9;
   border: 1px solid #e0e0e0;
   border-radius: 12px;
-  padding: 32px 20px;
-  flex: 1 1 300px;
-  min-width: 280px;
-  max-width: 420px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  padding: 36px 24px;
+  flex: 1 1 420px;
+  min-width: 300px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+  transition: transform 0.2s ease;
+}
+
+.connect-box:hover {
+  transform: translateY(-2px);
 }
 
 .connect-box h3 {
-  color: #0e0e60;
+  color: #000000; /* changed from navy to black */
   font-size: 1.25rem;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .connect-box p {
   font-size: 0.95rem;
   color: #444444;
   margin-bottom: 20px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .cta-btn {
@@ -933,12 +937,4 @@ footer {
 
 .cta-btn:hover {
   background-color: #1bb2b2;
-}
-
-.cta-btn.alt {
-  background-color: #0e0e60;
-}
-
-.cta-btn.alt:hover {
-  background-color: #0a0a4d;
 }

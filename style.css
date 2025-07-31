@@ -207,7 +207,7 @@ header {
 /* Services section */
 .services {
   background-color: #f8f9fa;
-  padding: 80px 20px;
+  padding: 80px 20px 60px 20px; /* top right bottom left */
 }
 
 .services-container {
@@ -386,9 +386,11 @@ header {
 }
 
 /* Portfolio section */
+
 .portfolio {
-  background-color: #f8f9fa;
-  padding: 80px 20px;
+  background-color: #ffffff;
+  padding: 80px 20px 80px 20px; /* or even more bottom padding if needed */
+  margin-top: 60px; /* separates from Industries */
 }
 
 .portfolio-container {

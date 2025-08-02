@@ -128,7 +128,7 @@ header {
   flex-direction: column;
   gap: 0;
   padding: 16px 0;
-  text-align: center;
+  text-align: left;
   background-color: white;
   position: fixed; /* Changed from absolute to fixed */
   top: 80px; /* Fixed positioning relative to viewport */
@@ -174,7 +174,7 @@ header {
   color: white !important;
   margin: 12px auto 0 auto !important;  /* centered horizontally */
   border-radius: 6px !important;
-  text-align: center !important;
+  text-align: left !important;
   padding: 12px 20px !important;
   font-weight: 600 !important;
   display: block !important;

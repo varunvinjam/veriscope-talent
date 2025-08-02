@@ -118,9 +118,10 @@ header {
 }
 
 .mobile-menu.show {
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
   background-color: #d9f9e6;
+  border: 2px solid red;
+  padding: 30px;
 }
 
 .mobile-menu a {

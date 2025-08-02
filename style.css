@@ -90,8 +90,8 @@ header {
 
 .hamburger-wrapper {
   position: fixed;
-  top: 25px;
-  right: 25px;
+  top: 16px;
+  right: 16px;
   z-index: 9999; /* Increased z-index to ensure it's always on top */
   display: flex;
   flex-direction: column;
@@ -100,11 +100,11 @@ header {
 
 .hamburger {
   display: none;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
   color: #333;
   background-color: white;
-  padding: 10px 14px;
+  padding: 6px 10px;
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   border: 1px solid #e0e0e0;

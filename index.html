@@ -230,9 +230,10 @@
 
     // Toggle the mobile menu
     hamburger.addEventListener("click", (e) => {
-	  console.log("Hamburger clicked"); // ✅ Add this line
 	  e.stopPropagation();
 	  mobileMenu.classList.toggle("show");
+	  console.log("Hamburger clicked");
+	  console.log("Menu now has class 'show'? =>", mobileMenu.classList.contains("show"));
 	});
 
     // Close the mobile menu after clicking a link

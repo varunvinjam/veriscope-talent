@@ -93,7 +93,7 @@ header {
   cursor: pointer;
   color: #333;
   user-select: none;
-  z-index: 10000;
+  z-index: 1001;
   position: fixed;
   top: 20px;
   right: 20px;
@@ -120,8 +120,7 @@ header {
 .mobile-menu.show {
   display: flex;
   flex-direction: column;
-  background-color: #d9f9e6; /* green tint when open */
-  min-height: 180px;
+  background-color: #d9f9e6;
 }
 
 .mobile-menu a {

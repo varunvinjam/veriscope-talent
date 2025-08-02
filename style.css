@@ -764,11 +764,6 @@ footer {
   }
 }
 
-.hamburger {
-  display: none;
-  /* other styles like font-size, position, etc. */
-}
-
 
 .form-section {
   max-width: 600px;

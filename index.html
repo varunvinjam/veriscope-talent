@@ -227,37 +227,35 @@
   document.addEventListener("DOMContentLoaded", () => {
     const hamburger = document.querySelector(".hamburger");
     const mobileMenu = document.getElementById("mobileMenu");
-    const links = document.querySelectorAll("#mobileMenu a");
 
-    // Toggle menu on hamburger click
+    // Toggle the mobile menu
     hamburger.addEventListener("click", (e) => {
-      e.stopPropagation();
+      e.stopPropagation(); // prevent bubbling to the document
       mobileMenu.classList.toggle("show");
     });
 
-    // Close menu when link is clicked and scroll to target
-    links.forEach(link => {
+    // Close the mobile menu after clicking a link
+    document.querySelectorAll("#mobileMenu a").forEach(link => {
       link.addEventListener("click", (e) => {
-        const href = link.getAttribute("href");
-        if (href && href.startsWith("#")) {
+        const target = link.getAttribute("href");
+        if (target && target.startsWith("#")) {
           e.preventDefault();
-          const targetElement = document.querySelector(href);
-          if (targetElement) {
-            targetElement.scrollIntoView({
-              behavior: "smooth",
-              block: "start"
-            });
+          const section = document.querySelector(target);
+          if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
           }
         }
-
         // Always close menu
         mobileMenu.classList.remove("show");
       });
     });
 
-    // Close menu if user clicks outside
+    // Close mobile menu when clicking outside
     document.addEventListener("click", (e) => {
-      if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+      const isClickInsideMenu = mobileMenu.contains(e.target);
+      const isClickOnHamburger = hamburger.contains(e.target);
+
+      if (!isClickInsideMenu && !isClickOnHamburger) {
         mobileMenu.classList.remove("show");
       }
     });

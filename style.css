@@ -90,67 +90,97 @@ header {
 
 .hamburger-wrapper {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1001;
+  top: 25px;
+  right: 25px;
+  z-index: 9999; /* Increased z-index to ensure it's always on top */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
 .hamburger {
-  display: none; /* gets overridden in mobile */
+  display: none;
   font-size: 24px;
   cursor: pointer;
   color: #333;
   background-color: white;
-  padding: 8px 12px;
-  border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1001;
+  padding: 10px 14px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e0e0e0;
+  z-index: 10000;
+  transition: all 0.2s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hamburger:hover {
+  background-color: #f8f9fa;
+  transform: scale(1.05);
+}
+
+.hamburger:active {
+  transform: scale(0.95);
 }
 
 .mobile-menu {
   display: none;
   flex-direction: column;
   gap: 0;
-  padding: 12px 0;
+  padding: 16px 0;
   text-align: center;
   background-color: white;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: 280px;
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-  border-top: 1px solid #eee;
-  z-index: 9999;
+  position: fixed; /* Changed from absolute to fixed */
+  top: 80px; /* Fixed positioning relative to viewport */
+  right: 25px;
+  min-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e0e0e0;
+  z-index: 9998;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
 }
 
 .mobile-menu.show {
   display: flex !important;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .mobile-menu a {
   text-decoration: none;
   color: #666666;
   font-weight: 500;
-  padding: 12px 0;
+  padding: 16px 24px;
   display: block;
   border-bottom: 1px solid #f0f0f0;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  font-size: 16px;
 }
 
 .mobile-menu a:last-child {
   border-bottom: none;
 }
 
+.mobile-menu a:hover {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
 .mobile-menu .contact-btn {
+  background-color: #21c6c6 !important;
+  color: white !important;
+  margin: 8px 24px 0 24px !important;
+  border-radius: 6px !important;
   text-align: center !important;
-  margin: 0 auto !important;
-  display: block !important;
-  width: fit-content !important;
+  padding: 12px 20px !important;
+  font-weight: 600 !important;
+}
+
+.mobile-menu .contact-btn:hover {
+  background-color: #1eb5b5 !important;
 }
 
 /* Hero section */
@@ -619,6 +649,17 @@ footer {
 @media (max-width: 768px) {
   body {
     padding: 0 16px;
+  }
+  
+   .mobile-menu {
+    right: 16px;
+    min-width: calc(100vw - 32px);
+    max-width: 350px;
+  }
+
+  .hamburger-wrapper {
+    right: 16px;
+    top: 20px;
   }
   
   .nav-links {

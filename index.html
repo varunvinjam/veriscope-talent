@@ -52,14 +52,14 @@
     <div class="connect-box">
 	  <img src="images/resume-4-svgrepo-com.svg" alt="Resume Icon" class="connect-icon">
 	  <h3>For Candidates</h3>
-	  <p>Looking for your next role? Share your resume and we’ll connect.</p>
+	  <p>Looking for your next role? Share your resume and we'll connect.</p>
 	  <a href="submit.html" class="cta-btn">Upload Resume</a>
 	</div>
 
 	<div class="connect-box">
 	  <img src="images/company-cooperation-group-svgrepo-com.svg" alt="Company Icon" class="connect-icon">
 	  <h3>For Companies</h3>
-	  <p>Need help hiring? Let’s find the right fit together.</p>
+	  <p>Need help hiring? Let's find the right fit together.</p>
 	  <a href="#contact" class="cta-btn">Contact Us</a>
 	</div>
   </div>
@@ -228,10 +228,19 @@
 </footer>
   
 <script>
-  // ✅ This must be outside any DOMContentLoaded wrapper
+  // Enhanced hamburger menu functionality
   function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
+    const hamburger = document.querySelector('.hamburger');
+    
     menu.classList.toggle('show');
+    
+    // Add visual feedback to hamburger button
+    if (menu.classList.contains('show')) {
+      hamburger.style.backgroundColor = '#f0f0f0';
+    } else {
+      hamburger.style.backgroundColor = 'white';
+    }
   }
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -239,34 +248,64 @@
     const hamburger = document.querySelector(".hamburger");
     const mobileMenu = document.getElementById("mobileMenu");
 
+    // Handle link clicks
     links.forEach(link => {
       link.addEventListener("click", (e) => {
         const href = link.getAttribute("href");
+        
+        // Handle anchor links
         if (href && href.startsWith("#")) {
           e.preventDefault();
           const targetElement = document.querySelector(href);
+          
           if (targetElement) {
-            targetElement.scrollIntoView({
-              behavior: "smooth",
-              block: "start"
-            });
+            // Close mobile menu first
+            mobileMenu.classList.remove("show");
+            hamburger.style.backgroundColor = 'white';
+            
+            // Small delay before scrolling for better UX
+            setTimeout(() => {
+              targetElement.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+              });
+            }, 150);
           }
+        } else {
+          // For external links, just close the menu
+          mobileMenu.classList.remove("show");
+          hamburger.style.backgroundColor = 'white';
         }
-
-        mobileMenu.classList.remove("show");
       });
     });
 
+    // Close menu when clicking outside
     document.addEventListener("click", (e) => {
-      if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+      const hamburgerWrapper = document.querySelector('.hamburger-wrapper');
+      
+      if (!hamburgerWrapper.contains(e.target)) {
         mobileMenu.classList.remove("show");
+        hamburger.style.backgroundColor = 'white';
       }
     });
 
-    // Ensure hamburger is clickable
+    // Prevent menu from closing when clicking inside it
+    mobileMenu.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+
+    // Handle hamburger click with event delegation
     hamburger.addEventListener("click", (e) => {
       e.stopPropagation();
       toggleMenu();
+    });
+
+    // Handle escape key to close menu
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && mobileMenu.classList.contains("show")) {
+        mobileMenu.classList.remove("show");
+        hamburger.style.backgroundColor = 'white';
+      }
     });
   });
 </script>

@@ -172,11 +172,12 @@ header {
 .mobile-menu .contact-btn {
   background-color: #21c6c6 !important;
   color: white !important;
-  margin: 8px 24px 0 24px !important;
+  margin: 12px auto 0 auto !important;  /* centered horizontally */
   border-radius: 6px !important;
   text-align: center !important;
   padding: 12px 20px !important;
   font-weight: 600 !important;
+  display: block !important;
 }
 
 .mobile-menu .contact-btn:hover {

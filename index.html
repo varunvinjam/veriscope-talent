@@ -228,42 +228,45 @@
 </footer>
   
 <script>
+  // ✅ This must be outside any DOMContentLoaded wrapper
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('show');
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll("#mobileMenu a, .nav-links a");
     const hamburger = document.querySelector(".hamburger");
     const mobileMenu = document.getElementById("mobileMenu");
 
-    // Toggle the mobile menu
-    hamburger.addEventListener("click", (e) => {
-	  e.stopPropagation();
-	  mobileMenu.classList.toggle("show");
-	  console.log("Hamburger clicked");
-	  console.log("Menu now has class 'show'? =>", mobileMenu.classList.contains("show"));
-	});
-
-    // Close the mobile menu after clicking a link
-    document.querySelectorAll("#mobileMenu a").forEach(link => {
+    links.forEach(link => {
       link.addEventListener("click", (e) => {
-        const target = link.getAttribute("href");
-        if (target && target.startsWith("#")) {
+        const href = link.getAttribute("href");
+        if (href && href.startsWith("#")) {
           e.preventDefault();
-          const section = document.querySelector(target);
-          if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
+          const targetElement = document.querySelector(href);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
           }
         }
-        // Always close menu
+
         mobileMenu.classList.remove("show");
       });
     });
 
-    // Close mobile menu when clicking outside
     document.addEventListener("click", (e) => {
-      const isClickInsideMenu = mobileMenu.contains(e.target);
-      const isClickOnHamburger = hamburger.contains(e.target);
-
-      if (!isClickInsideMenu && !isClickOnHamburger) {
+      if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
         mobileMenu.classList.remove("show");
       }
+    });
+
+    // Ensure hamburger is clickable
+    hamburger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleMenu();
     });
   });
 </script>

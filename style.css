@@ -112,7 +112,7 @@ header {
   border-top: 1px solid #eee;
   margin-top: 10px;
   text-align: center;
-  background-color: white;
+  background-color: #ffecec; /* light red for test */
   position: relative;
   z-index: 999;
 }
@@ -120,6 +120,7 @@ header {
 .mobile-menu.show {
   display: flex;
   flex-direction: column;
+  background-color: #d9f9e6; /* green tint when open */
 }
 
 .mobile-menu a {

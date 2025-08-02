@@ -230,9 +230,10 @@
 
     // Toggle the mobile menu
     hamburger.addEventListener("click", (e) => {
-      e.stopPropagation(); // prevent bubbling to the document
-      mobileMenu.classList.toggle("show");
-    });
+	  console.log("Hamburger clicked"); // ✅ Add this line
+	  e.stopPropagation();
+	  mobileMenu.classList.toggle("show");
+	});
 
     // Close the mobile menu after clicking a link
     document.querySelectorAll("#mobileMenu a").forEach(link => {

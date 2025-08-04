@@ -170,8 +170,8 @@ header {
 }
 
 .mobile-menu .contact-btn {
-  background-color: #21c6c6 !important;
-  color: white !important;
+  background-color: none !important;
+  color: #666666 !important;
   margin: 12px auto 0 auto !important;  /* centered horizontally */
   border-radius: 6px !important;
   text-align: left !important;
@@ -960,7 +960,7 @@ footer {
 .highlight-box {
   background-color: #e6f9f9;
   border: 1px solid #21c6c6;
-  color: #0e0e60;
+  color: #000000;
   font-weight: 600;
   padding: 14px 20px;
   border-radius: 24px;

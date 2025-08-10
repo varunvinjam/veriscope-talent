@@ -187,28 +187,116 @@
   </section>
   
   
-  <section class="testimonials">
-  <h2>What Our Clients Say</h2>
-  <div class="testimonial-carousel">
-    <div class="testimonial-card">
-      <p>"Veriscope Talent helped us find the right candidate within days. Highly professional and responsive!"</p>
-      <span>- Jane Smith, HR Manager, TechNova</span>
+  <!-- TESTIMONIALS SECTION START -->
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-container">
+    <h2>What Our Clients Say</h2>
+    
+    <div class="testimonial-carousel">
+      <div class="testimonial-track" id="testimonialTrack">
+        
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text">
+              "Veriscope Talent transformed our hiring process. Within 5 days, they delivered 3 exceptional candidates for our Senior Product Manager role. Their understanding of our startup culture and technical requirements was spot-on. The quality of candidates was outstanding."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">S</div>
+              <div class="author-info">
+                <h4>Sarah Chen</h4>
+                <p>VP of Engineering, TechFlow Solutions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text">
+              "We needed a CFO fast, and Veriscope delivered. Not only did they find us the perfect candidate in just 8 days, but they also handled all the coordination seamlessly. Their professionalism and efficiency are unmatched in the industry."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">R</div>
+              <div class="author-info">
+                <h4>Rajesh Kumar</h4>
+                <p>CEO, FinanceFirst Bank</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text">
+              "After struggling with other recruiters for months, Veriscope found our Head of Sales in just one week. They truly understand the healthcare industry and delivered candidates who weren't just qualified, but were a perfect cultural fit too."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">M</div>
+              <div class="author-info">
+                <h4>Dr. Maria Gonzalez</h4>
+                <p>Founder, MedTech Innovations</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text">
+              "Veriscope's precision in understanding our manufacturing requirements was impressive. They filled our Director of Operations role with a candidate who hit the ground running from day one. Exceptional service and results."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">A</div>
+              <div class="author-info">
+                <h4>Alex Thompson</h4>
+                <p>President, Industrial Solutions Corp</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 5 -->
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text">
+              "Working with Veriscope was a game-changer for our startup. They understood our fast-paced environment and budget constraints while still delivering top-tier talent. Their candidate became our CTO and has been instrumental in our growth."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">P</div>
+              <div class="author-info">
+                <h4>Priya Sharma</h4>
+                <p>Co-founder, NextGen Analytics</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div class="testimonial-card">
-      <p>"The hiring process was seamless and efficient. We’ll definitely work with them again."</p>
-      <span>- John Doe, CEO, BuildCore</span>
-    </div>
-    <div class="testimonial-card">
-      <p>"Fantastic experience! They understood our needs perfectly and delivered beyond expectations."</p>
-      <span>- Sarah Lee, Talent Lead, FinEdge</span>
-    </div>
-    <div class="testimonial-card">
-      <p>"Great service and attention to detail. We found exactly who we were looking for."</p>
-      <span>- Mark Wilson, Founder, DataSprint</span>
+
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="prevBtn">‹</button>
+      <div class="carousel-dots" id="carouselDots">
+        <div class="dot active" data-slide="0"></div>
+        <div class="dot" data-slide="1"></div>
+        <div class="dot" data-slide="2"></div>
+        <div class="dot" data-slide="3"></div>
+        <div class="dot" data-slide="4"></div>
+      </div>
+      <button class="carousel-btn" id="nextBtn">›</button>
     </div>
   </div>
 </section>
-
+<!-- TESTIMONIALS SECTION END -->
   
   
   <!-- CONTACT SECTION START -->
@@ -337,22 +425,137 @@
  
  
  <script>
-  const carousel = document.querySelector('.testimonial-carousel');
-  let scrollAmount = 0;
-
-  setInterval(() => {
-    if (carousel.scrollWidth - carousel.clientWidth <= scrollAmount) {
-      scrollAmount = 0;
-    } else {
-      scrollAmount += 320; // width + gap
+  // Testimonial Carousel Functionality
+  class TestimonialCarousel {
+    constructor() {
+      this.track = document.getElementById('testimonialTrack');
+      this.prevBtn = document.getElementById('prevBtn');
+      this.nextBtn = document.getElementById('nextBtn');
+      this.dots = document.querySelectorAll('.dot');
+      this.slides = document.querySelectorAll('.testimonial-card');
+      
+      this.currentSlide = 0;
+      this.totalSlides = this.slides.length;
+      this.autoPlayInterval = null;
+      this.isTransitioning = false;
+      
+      this.init();
     }
-    carousel.scrollTo({
-      left: scrollAmount,
-      behavior: 'smooth'
-    });
-  }, 4000); // scroll every 4 seconds
+    
+    init() {
+      // Add event listeners
+      this.prevBtn.addEventListener('click', () => this.prevSlide());
+      this.nextBtn.addEventListener('click', () => this.nextSlide());
+      
+      // Dot navigation
+      this.dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => this.goToSlide(index));
+      });
+      
+      // Touch/swipe support for mobile
+      this.addTouchSupport();
+      
+      // Auto-play
+      this.startAutoPlay();
+      
+      // Pause on hover
+      this.track.addEventListener('mouseenter', () => this.stopAutoPlay());
+      this.track.addEventListener('mouseleave', () => this.startAutoPlay());
+    }
+    
+    addTouchSupport() {
+      let startX = 0;
+      let currentX = 0;
+      let isDragging = false;
+      
+      this.track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+        this.stopAutoPlay();
+      });
+      
+      this.track.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        currentX = e.touches[0].clientX;
+      });
+      
+      this.track.addEventListener('touchend', () => {
+        if (!isDragging) return;
+        
+        const diffX = startX - currentX;
+        const threshold = 50;
+        
+        if (Math.abs(diffX) > threshold) {
+          if (diffX > 0) {
+            this.nextSlide();
+          } else {
+            this.prevSlide();
+          }
+        }
+        
+        isDragging = false;
+        this.startAutoPlay();
+      });
+    }
+    
+    updateSlidePosition() {
+      if (this.isTransitioning) return;
+      
+      this.isTransitioning = true;
+      const translateX = -this.currentSlide * 100;
+      this.track.style.transform = `translateX(${translateX}%)`;
+      
+      // Update dots
+      this.dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === this.currentSlide);
+      });
+      
+      setTimeout(() => {
+        this.isTransitioning = false;
+      }, 500);
+    }
+    
+    nextSlide() {
+      if (this.isTransitioning) return;
+      this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+      this.updateSlidePosition();
+    }
+    
+    prevSlide() {
+      if (this.isTransitioning) return;
+      this.currentSlide = this.currentSlide === 0 ? this.totalSlides - 1 : this.currentSlide - 1;
+      this.updateSlidePosition();
+    }
+    
+    goToSlide(slideIndex) {
+      if (this.isTransitioning || slideIndex === this.currentSlide) return;
+      this.currentSlide = slideIndex;
+      this.updateSlidePosition();
+      this.stopAutoPlay();
+      this.startAutoPlay();
+    }
+    
+    startAutoPlay() {
+      this.stopAutoPlay();
+      this.autoPlayInterval = setInterval(() => {
+        this.nextSlide();
+      }, 5000); // Change slide every 5 seconds
+    }
+    
+    stopAutoPlay() {
+      if (this.autoPlayInterval) {
+        clearInterval(this.autoPlayInterval);
+        this.autoPlayInterval = null;
+      }
+    }
+  }
+  
+  // Initialize carousel when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    new TestimonialCarousel();
+  });
 </script>
-
+ 
  
 </body>
 </html>

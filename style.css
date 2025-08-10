@@ -845,15 +845,23 @@ footer {
   color: #21c6c6;
 }
 
+/* Updated Contact Section - Hybrid Approach */
 .contact-section {
   padding: 60px 20px;
   text-align: center;
-  background-color: #f8f9fa;
+  background-color: #f8f9fa; /* Keep grey background */
 }
 
 .contact-section h2 {
   font-size: 1.8rem;
   margin-bottom: 12px;
+  color: #000000;
+}
+
+.contact-section p {
+  color: #666666;
+  margin-bottom: 32px;
+  font-size: 16px;
 }
 
 .contact-form {
@@ -862,6 +870,11 @@ footer {
   gap: 16px;
   max-width: 600px;
   margin: 24px auto 0;
+  background-color: #ffffff; /* White card background */
+  padding: 40px 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8e9ea;
 }
 
 .contact-form input,
@@ -871,11 +884,19 @@ footer {
   border-radius: 6px;
   border: 1px solid #ccc;
   width: 100%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #21c6c6;
+  box-shadow: 0 0 0 3px rgba(33, 198, 198, 0.1);
 }
 
 .contact-form button {
   padding: 12px;
-  background-color: #000000; /* changed from navy to black */
+  background-color: #000000;
   color: white;
   font-weight: 600;
   border: none;
@@ -886,9 +907,23 @@ footer {
 }
 
 .contact-form button:hover {
-  background-color: #21c6c6; /* teal on hover */
+  background-color: #21c6c6;
 }
 
+/* Mobile styles for contact */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 50px 16px;
+  }
+  
+  .contact-form {
+    padding: 30px 24px;
+    margin: 20px auto 0;
+  }
+}
+
+
+/* Industry Section*/
 
 .industry-section {
   margin-top: 60px;
@@ -957,6 +992,8 @@ footer {
   min-width: 220px;
   text-align: center;
 }
+
+/* Connect Section - for candidates and companies*/
 
 .connect-section {
   padding: 60px 20px;

@@ -291,54 +291,73 @@ header {
   margin-bottom: 20px;
 }
 
-/* Features section (now part of About Us) */
-.features {
+/* Trust Grid in about us section*/
+.trust-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
-  margin-top: 40px;
+  margin-bottom: 80px;
 }
 
-.feature-box {
-  background-color: #fafafa;
-  padding: 32px 20px 36px;
-  border-radius: 12px;
-  border: 1px solid #e5e5e5;
+.trust-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(33, 198, 198, 0.1);
+  border-radius: 16px;
+  padding: 32px 24px;
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  min-height: 280px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 16px; /* space between icon, title, and text */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-.feature-box:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+.trust-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #21c6c6, #17a2b8);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
-.feature-box img {
-  height: 48px;
-  width: 48px;
-  margin: 0 auto 16px auto;
-  opacity: 0.8;
-  display: block;
+.trust-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(33, 198, 198, 0.15);
+  border-color: rgba(33, 198, 198, 0.3);
 }
 
-.feature-box h3 {
+.trust-card:hover::before {
+  transform: scaleX(1);
+}
+
+.trust-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  filter: grayscale(0.3);
+  transition: filter 0.3s ease;
+}
+
+.trust-card:hover .trust-icon {
+  filter: grayscale(0);
+}
+
+.trust-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
   margin-bottom: 12px;
-  color: #000000;
-  font-weight: 600;
-  font-size: 18px;
 }
 
-.feature-box p {
-  line-height: 1.7;
-  font-weight: 400;
-  color: #666666;
-  font-size: 15px;
+.trust-card p {
+  font-size: 0.95rem;
+  color: #6c757d;
+  line-height: 1.6;
+  margin: 0;
 }
+
 
 /* Services section - GREY BACKGROUND */
 .services {
@@ -1269,73 +1288,6 @@ footer {
   .portfolio-description {
     margin-bottom: 30px;
   }
-
-/* Trust Grid in about us section*/
-.trust-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  margin-bottom: 80px;
-}
-
-.trust-card {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(33, 198, 198, 0.1);
-  border-radius: 16px;
-  padding: 32px 24px;
-  text-align: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.trust-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, #21c6c6, #17a2b8);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.trust-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(33, 198, 198, 0.15);
-  border-color: rgba(33, 198, 198, 0.3);
-}
-
-.trust-card:hover::before {
-  transform: scaleX(1);
-}
-
-.trust-icon {
-  font-size: 2.5rem;
-  margin-bottom: 16px;
-  filter: grayscale(0.3);
-  transition: filter 0.3s ease;
-}
-
-.trust-card:hover .trust-icon {
-  filter: grayscale(0);
-}
-
-.trust-card h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 12px;
-}
-
-.trust-card p {
-  font-size: 0.95rem;
-  color: #6c757d;
-  line-height: 1.6;
-  margin: 0;
-}
 
 
   /* Footer mobile styles */

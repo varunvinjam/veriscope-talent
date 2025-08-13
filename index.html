@@ -69,7 +69,7 @@
   <section class="about-us" id="about">
     <h2>About Us</h2>
     <div class="about-description">
-      <p>At Veriscope Talent, we help you build teams that are the engine for your growth. Our deep-rooted expertise in sectors like Banking & Financial Services, IT, Manufacturing, and Healthcare & Life Sciences provides an intimate understanding of your unique challenges and opportunities. This foundational knowledge allows us to act as a true strategic partner, not just a recruiter. We respect your time, protect your standards, and ultimately, help you build the exceptional team your business deserves.</p>
+      <p>At Veriscope Talent, we build high-impact teams that accelerate growth. Backed by experience with global leaders like Google, Amazon, Uber, Deloitte, and Unilever, our team understands the real hiring challenges fast-growing businesses face. With expertise spanning Technology and non-Technology sectors, we move quickly, protect your standards, and connect you with the exceptional talent your business deserves.</p>
     </div>
 
     <div class="features">
@@ -229,26 +229,109 @@
 
   <section class="portfolio" id="portfolio">
     <div class="portfolio-container">
-      <h2>Our Portfolio</h2>
-      
-      <div class="portfolio-description">
-        <ul class="portfolio-list">
-		  <li><span class="checkmark">✔</span> Worked with a range of companies — from fast-scaling startups to established businesses.</li>
-		  <li><span class="checkmark">✔</span> Closed roles across tech, product, sales, design, and operations.</li>
-		  <li><span class="checkmark">✔</span> Clientele across India, Europe, USA, and the Middle East.</li>
-		  <li><span class="checkmark">✔</span> Delivered candidates within 3–10 days for urgent mandates.</li>
-		</ul>
-		
-		<!-- 🔵 Impact Highlights -->
-		  <div class="portfolio-highlights">
-			<div class="highlight-box">500+ Roles Closed</div>
-			<div class="highlight-box">100+ Leadership Hires</div>
-			<div class="highlight-box">Clients Across 6+ Industries</div>
-		  </div>
-		
-      </div>
+        <!-- Header Section -->
+        <div class="portfolio-header">
+            <h2>Our Portfolio</h2>
+            <p class="portfolio-subtitle">Delivering exceptional talent acquisition solutions across global markets</p>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="trust-grid">
+            <div class="trust-card">
+                <div class="trust-icon">🌍</div>
+                <h3>Global Reach</h3>
+                <p>Worked with a range of companies — from fast-scaling startups to established Fortune 500 businesses worldwide.</p>
+            </div>
+            <div class="trust-card">
+                <div class="trust-icon">⚡</div>
+                <h3>Speed & Precision</h3>
+                <p>Closed roles across tech, product, sales, design, and operations with exceptional accuracy and efficiency.</p>
+            </div>
+            <div class="trust-card">
+                <div class="trust-icon">🎯</div>
+                <h3>Market Expertise</h3>
+                <p>Clientele across India, Europe, USA, and the Middle East, adapting to diverse market requirements.</p>
+            </div>
+            <div class="trust-card">
+                <div class="trust-icon">🚀</div>
+                <h3>Rapid Delivery</h3>
+                <p>Delivered top candidates within 3–10 days for urgent mandates when speed is absolutely critical.</p>
+            </div>
+        </div>
+
+        <!-- Impact Numbers Section -->
+        <div class="impact-section">
+            <h3 class="impact-title">Portfolio Highlights</h3>
+            <div class="stats-grid">
+                <div class="stat-bubble">
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-label">Roles Successfully Closed</div>
+                    <div class="stat-icon">📈</div>
+                </div>
+                <div class="stat-bubble">
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">Leadership & Executive Hires</div>
+                    <div class="stat-icon">👑</div>
+                </div>
+                <div class="stat-bubble">
+                    <div class="stat-number" data-target="6">0</div>
+                    <div class="stat-label">Industries Served</div>
+                    <div class="stat-icon">🏢</div>
+                </div>
+                <div class="stat-bubble">
+                    <div class="stat-number" data-target="10">0</div>
+                    <div class="stat-label">Average Days to Hire</div>
+                    <div class="stat-icon">⏱️</div>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
+
+    <script>
+        // Animate numbers when they come into view
+        const animateNumbers = () => {
+            const numbers = document.querySelectorAll('.stat-number');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = parseInt(entry.target.getAttribute('data-target'));
+                        const increment = target / 50;
+                        let current = 0;
+                        
+                        const timer = setInterval(() => {
+                            current += increment;
+                            entry.target.textContent = Math.floor(current) + (target > 50 ? '+' : '');
+                            
+                            if (current >= target) {
+                                entry.target.textContent = target + (target > 50 ? '+' : '');
+                                clearInterval(timer);
+                            }
+                        }, 40);
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            numbers.forEach(number => observer.observe(number));
+        };
+
+        // Add floating animation to stat bubbles
+        const addFloatingAnimation = () => {
+            const bubbles = document.querySelectorAll('.stat-bubble');
+            bubbles.forEach((bubble, index) => {
+                bubble.style.animationDelay = `${index * 0.2}s`;
+            });
+        };
+
+        // Initialize animations when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            animateNumbers();
+            addFloatingAnimation();
+        });
+    </script>
+</section>
   
   
   <!-- TESTIMONIALS SECTION START -->

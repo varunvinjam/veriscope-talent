@@ -375,6 +375,7 @@ header {
   }
 }
 
+
 /* Services section - GREY BACKGROUND */
 .services {
     background-color: #f8f9fa;
@@ -457,8 +458,8 @@ header {
 }
 
 .service-icon-circle {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -486,14 +487,18 @@ header {
 }
 
 .service-card:hover .service-icon-circle {
-    transform: scale(1.1) rotate(10deg);
+    transform: scale(1.15);
 }
 
 .service-icon svg {
-    width: 32px;
-    height: 32px;
+    width: 26px;
+    height: 26px;
     fill: white;
     transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon svg {
+    transform: scale(1.1);
 }
 
 .service-card h3 {
@@ -558,15 +563,17 @@ header {
     }
     
     .service-icon-circle {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
     }
     
     .service-icon svg {
-        width: 28px;
-        height: 28px;
+        width: 24px;
+        height: 24px;
     }
 }
+
+
 
 /* Industries section - WHITE BACKGROUND */
 .industries {

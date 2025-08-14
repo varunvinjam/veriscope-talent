@@ -555,7 +555,7 @@ header {
     transform: scale(1.1);
 }
 
-/* Responsive design */
+/* Responsive design for SERVICES section */
 @media (max-width: 768px) {
     .services-grid {
         grid-template-columns: 1fr;
@@ -580,6 +580,7 @@ header {
 
 
 /* Industries section - WHITE BACKGROUND */
+
 .industries {
   background-color: #ffffff;
   padding: 80px 20px 60px 20px;
@@ -640,9 +641,9 @@ header {
   opacity: 0.85;
 }
 
-/* Portfolio section - Modern redesign */
 
 /* Portfolio section - Simplified with grey background */
+
 .portfolio {
   background-color: #f8f9fa;
   padding: 80px 20px;
@@ -756,7 +757,7 @@ header {
   z-index: 1;
 }
 
-/* Responsive Design */
+/* Responsive Design for PORTFOLIO section */
 @media (max-width: 768px) {
   .portfolio {
     padding: 60px 15px;
@@ -1395,7 +1396,7 @@ footer {
   }
 }
 
-/* Responsive design */
+/* Responsive design for NAV LINKS / HAMBURGER menu*/
 @media (max-width: 768px) {
   body {
     padding: 0 16px;

@@ -879,7 +879,7 @@ header {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   color: #000000;
-  min-height: 280px;
+  min-height: 350px;
   display: flex;
   flex-direction: column;
 }
@@ -899,11 +899,11 @@ header {
 }
 
 .vibrant-color-3 {
-  background-color: #A8E6CF; /* Mint green */
+  background-color: #9ADCFF; /* Light Blue */
 }
 
 .vibrant-color-4 {
-  background-color: #FFB3BA; /* Light pink */
+  background-color: #A8E6CF; /* Mint green */
 }
 
 .vibrant-color-5 {

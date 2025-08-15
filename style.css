@@ -1634,6 +1634,7 @@ footer {
 
   .testimonial-content {
     padding: 30px 24px;
+	min-height: 350px;
   }
 
   .testimonial-text {

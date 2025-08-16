@@ -391,7 +391,8 @@ header {
   box-shadow: 0 4px 15px rgba(33, 198, 198, 0.3);
 }
 
-			/* Responsive Design for Connect Section*/
+/* Responsive Design for Connect Section*/
+
 @media (max-width: 768px) {
   .connect-section {
 	padding: 60px 20px;
@@ -1493,6 +1494,7 @@ footer {
 
 
 /* Responsive design for NAV LINKS / HAMBURGER menu*/
+
 @media (max-width: 768px) {
   body {
     padding: 0 16px;
@@ -1603,6 +1605,15 @@ footer {
     margin-bottom: 30px;
   }
 
+  /* Mobile styles for contact */
+  .contact-section {
+    padding: 50px 16px;
+  }
+  
+  .contact-form {
+    padding: 30px 24px;
+    margin: 20px auto 0;
+  }
 
   /* Footer mobile styles */
   footer {
@@ -1661,14 +1672,6 @@ footer {
     font-size: 11px;
   }
 
-  /* Mobile styles for contact */
-  .contact-section {
-    padding: 50px 16px;
-  }
-  
-  .contact-form {
-    padding: 30px 24px;
-    margin: 20px auto 0;
-  }
+
 
   

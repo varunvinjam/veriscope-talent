@@ -172,6 +172,25 @@ header {
   color: #333;
 }
 
+/* Mobile style - Header / Navbar */
+
+@media (max-width: 768px) {
+  .mobile-menu {
+    right: 16px;
+    min-width: calc(100vw - 32px);
+    max-width: 350px;
+  }
+  .hamburger-wrapper {
+    right: 16px;
+    top: 20px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+}
 
 /* Hero section */
 .hero {
@@ -246,6 +265,35 @@ header {
 
 .cta-btn:hover {
   background-color: #1eb5b5;
+}
+
+
+/* Mobile style - Hero */
+  
+@media (max-width: 768px) {  
+  .hero {
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 16px 30px;
+    min-height: auto;
+  }
+  .hero-content {
+    text-align: left;
+    width: 100%;
+  }
+  .hero-image {
+    flex: none;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+    max-width: 100%;
+  }
+  .hero p {
+    max-width: 100%;
+  }
 }
 
 
@@ -556,6 +604,17 @@ header {
   .about-us-card h3 {
     font-size: 1.1rem;
   }
+  
+ .about-us {
+    padding: 60px 16px 40px;
+  }
+  .about-us h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  .about-description {
+    margin-bottom: 40px;
+  }
 }
 
 
@@ -736,25 +795,40 @@ header {
 
 /* Responsive design for SERVICES section */
 @media (max-width: 768px) {
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .service-card {
-        padding: 30px 25px;
-    }
-    
-    .service-icon-circle {
-        width: 55px;
-        height: 55px;
-    }
-    
-    .service-icon svg {
-        width: 24px;
-        height: 24px;
-    }
+  .services {
+    padding: 60px 16px;
+  }
+
+  .services h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr; /* single column on mobile */
+    gap: 24px; /* keep one consistent gap */
+  }
+
+  .service-card {
+    padding: 30px 24px; /* merged padding */
+    margin-bottom: 24px;
+  }
+
+  .service-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .service-icon-circle {
+    width: 55px;
+    height: 55px;
+  }
+
+  .service-icon svg {
+    width: 24px;
+    height: 24px;
+  }
 }
+
 
 
 
@@ -830,7 +904,8 @@ header {
   opacity: 0.9;
 }
 
-/* Responsive adjustments for INDUSTRIES section */
+/* Mobile adjustments for INDUSTRIES section */
+
 @media (max-width: 768px) {
   .industries {
     padding: 60px 16px;
@@ -838,10 +913,8 @@ header {
   .industries h2 {
     font-size: 1.8rem;
     margin-bottom: 30px;
-  }
+  }  
 }
-
-
 
 /* Portfolio section - Simplified with grey background */
 
@@ -979,6 +1052,18 @@ header {
   
   .impact-title {
     font-size: 1.8rem;
+  }
+  
+  .portfolio {
+    padding: 60px 16px;
+  }
+  
+  .portfolio h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  .portfolio-description {
+    margin-bottom: 30px;
   }
 }
 
@@ -1248,8 +1333,8 @@ header {
 }
 
 
-
 /* Contact Section - GREY BACKGROUND */
+
 .contact-section {
   padding: 60px 20px;
   text-align: center;
@@ -1313,6 +1398,23 @@ header {
 .contact-form button:hover {
   background-color: #21c6c6;
 }
+
+
+/* Mobile styles for contact */
+
+@media (max-width: 768px) {
+
+  .contact-section {
+	padding: 50px 16px;
+  }
+  
+  .contact-form {
+	padding: 30px 24px;
+	margin: 20px auto 0;
+  }
+}
+
+
 
 footer {
   background-color: #ffffff;
@@ -1440,7 +1542,56 @@ footer {
   opacity: 0.7;
   margin: 0;
 }
-			
+
+/* Mobile style - Footer */
+ 
+ @media (max-width: 768px) {
+ footer {
+    padding: 35px 16px 16px;
+    margin: 0 -16px;
+  }
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 16px;
+  }
+  .footer-left h3 {
+    font-size: 1.4rem;
+  }
+  .footer-left .footer-subtitle {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  .footer-right {
+    align-items: flex-start;
+    width: 100%;
+    gap: 14px;
+  }
+  .footer-logo {
+    font-size: 13px;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .footer-logo img {
+    height: 24px;
+    width: 24px;
+  }
+  .footer-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: flex-start;
+  }
+  .footer-nav a {
+    font-size: 13px;
+  }
+  .footer-bottom {
+    padding: 20px 16px 0;
+  }
+  .footer-bottom p {
+    font-size: 11px;
+  }
+}
 
 /* Form Section Styles */
 .form-section {
@@ -1493,185 +1644,14 @@ footer {
 }
 
 
-/* Responsive design for NAV LINKS / HAMBURGER menu*/
+/* Global settings for mobile design */
 
 @media (max-width: 768px) {
+  /* Global */
   body {
     padding: 0 16px;
   }
-  
-   .mobile-menu {
-    right: 16px;
-    min-width: calc(100vw - 32px);
-    max-width: 350px;
-  }
-
-  .hamburger-wrapper {
-    right: 16px;
-    top: 20px;
-  }
-  
-  .nav-links {
-    display: none;
-  }
-  
-  .hamburger {
-    display: block;
-  }
-  
-  .hero {
-    flex-direction: column;
-    gap: 30px;
-    padding: 40px 16px 30px;
-    min-height: auto;
-  }
-  
-  .hero-content {
-    text-align: left;
-    width: 100%;
-  }
-  
-  .hero-image {
-    flex: none;
-    width: 100%;
-    max-width: 350px;
-    margin: 0 auto;
-  }
-  
-  .services {
-    padding: 60px 16px;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  
-  .industries {
-    padding: 60px 16px;
-  }
-  
-  .services h2, .about-us h2, .portfolio h2, .industries h2 {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-  }
-  
-  .service-card {
-    padding: 30px 24px;
-    margin-bottom: 24px;
-  }
-  
-  .service-card h3 {
-    font-size: 1.3rem;
-  }
-  
-  .hero h1 {
-    font-size: 2.2rem;
-    max-width: 100%;
-  }
-  
-  .hero p {
-    max-width: 100%;
-  }
-  
-  /* Show mobile line breaks only on mobile */
   .mobile-break {
     display: inline;
   }
-  
-  .about-us {
-    padding: 60px 16px 40px;
-  }
-  
-  .about-description {
-    margin-bottom: 40px;
-  }
-  
-  .features {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .feature-box {
-    min-height: auto;
-    padding: 28px 20px 32px;
-  }
-  
-  .portfolio {
-    padding: 60px 16px;
-  }
-  
-  .portfolio-description {
-    margin-bottom: 30px;
-  }
-
-  /* Mobile styles for contact */
-  .contact-section {
-    padding: 50px 16px;
-  }
-  
-  .contact-form {
-    padding: 30px 24px;
-    margin: 20px auto 0;
-  }
-
-  /* Footer mobile styles */
-  footer {
-    padding: 35px 16px 16px;
-    margin: 0 -16px;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    gap: 30px;
-    padding: 0 16px;
-  }
-
-  .footer-left h3 {
-    font-size: 1.4rem;
-  }
-
-  .footer-left .footer-subtitle {
-    font-size: 13px;
-    margin-bottom: 20px;
-  }
-
-  .footer-right {
-    align-items: flex-start;
-    width: 100%;
-    gap: 14px;
-  }
-
-  .footer-logo {
-    font-size: 13px;
-    gap: 8px;
-    margin-bottom: 6px;
-  }
-
-  .footer-logo img {
-    height: 24px;
-    width: 24px;
-  }
-
-  .footer-nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 18px;
-    align-items: flex-start;
-  }
-
-  .footer-nav a {
-    font-size: 13px;
-  }
-
-  .footer-bottom {
-    padding: 20px 16px 0;
-  }
-
-  .footer-bottom p {
-    font-size: 11px;
-  }
-
-
-
-  
+}
